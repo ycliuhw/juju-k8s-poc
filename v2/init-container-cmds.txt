@@ -1,0 +1,4 @@
+# mongo admin --port 37017 --sslPEMKeyFile=/var/lib/juju/server.pem --ssl --sslAllowInvalidHostnames --sslAllowInvalidCertificates
+mongo admin --port 37017 --ssl --sslAllowInvalidHostnames --sslAllowInvalidCertificates -u admin -p juju-mongo-pwd
+
+db.createUser({user: 'admin', pwd: 'juju-mongo-pwd', roles: [{role: 'root', db: 'admin'}]})
